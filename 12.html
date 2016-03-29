@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学习CSS 3的新特性</title>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		img{
+			border: 0;
+		}
+		#top{
+			margin-left: 30px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		#top td,th{
+			border: 1px solid #fff;
+		}
+		#top th{
+			color: #fff;
+			background: #000;
+		}
+		#top tbody tr:nth-of-type(even){
+			background: #ccc;
+		}
+		#top .red{
+			color:red;    
+		}
+		#text{
+			width:150px;
+			color:#ccc;
+			margin-bottom: 100px;
+			margin-left: 20px;
+			border:1px solid #c0c0c0;
+			transition: 1.5s;
+		}
+		#text:focus{
+			width:250px;
+			color:#000;
+			box-shadow: 0px 0px 10px #000;
+		}
+		#banner{
+			width:400px;
+			height:200px;
+			margin-bottom: 200px;
+			margin-left: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+		#banner .banner-img{
+			width:100%;
+			height:100%;
+			position: relative;
+		}
+		#banner .banner-img li{
+			width:100%;
+			height:100%;
+			position: absolute;
+			transition: 2s;
+		}
+		#banner .banner-img li:nth-of-type(1){
+			background: #ee0000;
+		}
+		#banner .banner-img li:nth-of-type(2){
+			background: #00ee00;
+		}
+		#banner .banner-img li:nth-of-type(3){
+			background: #0000ee;
+		}
+		@-webkit-keyframes move{
+			from{ 
+				left:-100%; 
+			}
+			to{ 
+				left:0%;
+			}
+		}
+		#banner .banner-btn{
+			position: absolute;
+			bottom:0px;
+			right:0px;
+		}
+		#banner .banner-btn li{
+			width:30px;
+			height:30px;
+			line-height: 30px;
+			background: rgba(256,256,256,0.5);
+			float: left;
+			margin-left: 1px;
+			text-align: center;
+			position: relative;
+			z-index: 2;
+		}
+		#banner .banner-btn a{
+			width:100%;
+			height:100%;
+			display: block;
+		}
+		#banner .banner-img li:target{
+			z-index: 1;
+			animation:move 1s linear;
+		}
+	</style>
+</head>
+<body>
+	<table id="top">
+		<thead>
+			<tr>
+				<th>排名</th>
+				<th>网站</th>
+				<th>热度</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="red">
+				<td>1.</td>
+				<td>百度前端技术学院</td>
+				<td>13000</td>
+			</tr>
+			<tr class="red">
+				<td>2.</td>
+				<td>百度前端技术学院</td>
+				<td>12000</td>
+			</tr>
+			<tr class="red">
+				<td>3.</td>
+				<td>百度前端技术学院</td>
+				<td>11000</td>
+			</tr>
+			<tr>
+				<td>4.</td>
+				<td>百度前端技术学院</td>
+				<td>10000</td>
+			</tr>
+			<tr>
+				<td>5.</td>
+				<td>百度前端技术学院</td>
+				<td>9000</td>
+			</tr>
+			<tr>
+				<td>6.</td>
+				<td>百度前端技术学院</td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>7.</td>
+				<td>百度前端技术学院</td>
+				<td>7000</td>
+			</tr>
+			<tr>
+				<td>8.</td>
+				<td>百度前端技术学院</td>
+				<td>6000</td>
+			</tr>
+			<tr>
+				<td>9.</td>
+				<td>百度前端技术学院</td>
+				<td>5000</td>
+			</tr>
+			<tr>
+				<td>10.</td>
+				<td>百度前端技术学院</td>
+				<td>4000</td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="text" value="点击这个文本输入框" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '点击这个文本输入框';}" id="text">
+	<section id="banner">
+		<ul class="banner-img">
+			<li id="tab1"></li>
+			<li id="tab2"></li>
+			<li id="tab3"></li>
+		</ul>
+		<ul class="banner-btn"> 
+			<li><a href="#tab1">1</a></li>
+			<li><a href="#tab2">2</a></li>
+			<li><a href="#tab3">3</a></li>
+		</ul>
+	</section>
+</body>
+</html>
